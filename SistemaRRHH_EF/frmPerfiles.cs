@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SistemaRRHH_EF
 {
-    public partial class Form1 : Form
+    public partial class frmPerfiles : Form
     {
-        public Form1()
+        public frmPerfiles()
         {
             InitializeComponent();
         }
