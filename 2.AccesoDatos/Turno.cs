@@ -1,25 +1,32 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modelo
+namespace _2.AccesoDatos
 {
-	public class Turno
-	{
+    [PrimaryKey(nameof(Fecha), nameof(Horario))]
+    public class Turno
+    {
+       
+        public string Fecha { get; set; }
+        public string Horario { get; set; }
+        public int NroEntrevista { get; set; }
+        [ForeignKey("NroEntrevista")]
+        public string PsicologoEntrevista { get; set; }
+        [ForeignKey("PsicologoEntrevista")]
 
-		public string _fecha { get; set; }
+        public bool Disponible { get; set; }
 
-		public string _horario { get; set; }
+        public virtual EntrevistaPerfil EntrevistaPerfil { get; set; }
+        public virtual Psicologo Psicologo { get; set; }    
 
-		public bool _disponible { get; set; }
 
-		public EntrevistaPerfil _nroEntrevista { get; set; }
 
-		public Psicologo _psicologo { get; set; }
 
-		
-
-	}
+    }
 }

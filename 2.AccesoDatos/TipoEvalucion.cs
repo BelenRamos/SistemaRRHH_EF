@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modelo
+namespace _2.AccesoDatos
 {
-	public class TipoEvalucion
-	{
+    public class TipoEvalucion
+    {
+        [Key]
+        public int Id { get; set; }
 
-		public int _id { get; set; }
+        public string Detalle { get; set; }
 
-		public string _detalle { get; set; }
-
-	}
+    }
 }

@@ -1,18 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modelo
+namespace _2.AccesoDatos
 {
-	public class Perfil
-	{
+    public class Perfil
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
 
-		public int _id { get; set; }
+        public string Nombre { get; set; }
 
-		public string _nombre { get; set; }
+        public string DescripcionPerfil { get; set; }
 
-		public string _descripcionPerfil { get; set; }
-	}
+    }
 }
